@@ -23,8 +23,9 @@ void Producer::Act()
 		contentStore->AddEntry(p, NULL);
 		cout << "Producer with id " << nodeId << " generated Packet(" << p->packetType << "," << p->dataSize << "," << newDataName << ")" << endl;
 		Packet * ad = new Packet(2, 10, newDataName);
-		for (int i = 0; i < links.size(); i++)
-			PreForward(ad, links[i]);
+
+		/* For original ndn there is no advertising */
+
 		datas->push_back(p);
 	}
 }
